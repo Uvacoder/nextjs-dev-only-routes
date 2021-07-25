@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { devOnly } from "../utils/devOnly";
 
-export default function Home() {
+export default function Wip() {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,13 +14,15 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 style={{ marginBottom: "12px" }} className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          WIP
         </h1>
 
-        <Link href="/wip" passHref>
-          <a style={{ color: "blue" }}>Go to WIP</a>
+        <Link href="/" passHref>
+          <a style={{ color: "blue" }}>Home</a>
         </Link>
       </main>
     </div>
   );
 }
+
+export const getServerSideProps = devOnly;
